@@ -1,1 +1,1 @@
-# Arduino
+# Sub-bands-of-EEG
