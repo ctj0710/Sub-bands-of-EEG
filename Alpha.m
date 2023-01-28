@@ -1,0 +1,22 @@
+%To extract Alpha band
+f1=8;
+f2=12;
+N=4;
+fs=128;
+w1=2*f1/fs;
+w2=2*f2/fs;
+[B,A]=butter(N,[w1 w2]);
+[h,c]=freqz(B,A,512,fs);
+m=20*log10(abs(h));
+figure(5);
+plot(c,m);
+xlabel('frequency');
+ylabel('gain in db');
+t=length(c1);
+n=1:t;
+a=filter(B,A,c1);
+figure(6);
+subplot(2,1,1);
+plot(n,c1);
+subplot(2,1,2);
+plot(n,a);
